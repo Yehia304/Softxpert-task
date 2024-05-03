@@ -17,4 +17,4 @@
 3. I used domain driven design to organize the application <br>
 <hr>
 
-![screen](https://user-images.githubusercontent.com/31679900/123519401-16fd0680-d679-11eb-8a98-378d9a2fe9ba.png)
+![ERD](https://github.com/Yehia304/Softxpert-task/assets/58173492/b5eaa24a-98c2-4505-99b2-8cc59799f1ba)
