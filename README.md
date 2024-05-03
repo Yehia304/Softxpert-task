@@ -12,9 +12,10 @@
 
 ## Design
 <br>
-1. I used laravel sanctum authentication <br>
-2. I used postman to clarify the endpoints and the examples <br>
-3. I used domain driven design to organize the application <br>
+1. I used laravel 11 and php 8.2 <br>
+2. I used laravel sanctum authentication <br>
+3. I used postman to clarify the endpoints and the examples <br>
+4. I used domain driven design to organize the application <br>
 <hr>
 
 ![ERD](https://github.com/Yehia304/Softxpert-task/assets/58173492/b5eaa24a-98c2-4505-99b2-8cc59799f1ba)
