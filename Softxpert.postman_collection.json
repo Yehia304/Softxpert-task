@@ -1,0 +1,1211 @@
+{
+	"info": {
+		"_postman_id": "a68c53d5-7bd0-4bbc-80cb-3c53b3c50db9",
+		"name": "Softxpert",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30546040"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.environment.set (\"token\", response.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"uuid": "00a89290-9c28-4586-980f-9a1a3ab5eb59"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "yehia2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "yehia el sayed",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "1",
+									"description": "This field is prohibited if it was passed a validation error will be returned.",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "yehia@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "yehia el sayed",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "1",
+											"description": "This field is prohibited if it was passed a validation error will be returned.",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 May 2024 14:00:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User registered successfully\",\n    \"user\": {\n        \"email\": \"yehia@gmail.com\",\n        \"name\": \"yehia el sayed\",\n        \"updated_at\": \"2024-05-03T14:00:13.000000Z\",\n        \"created_at\": \"2024-05-03T14:00:13.000000Z\",\n        \"id\": 20\n    },\n    \"token\": \"14|R3oFZmK6VKcu3gqZ6tEK8J0O9K5RccZx7vhqD8Pue46c3263\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.environment.set (\"token\", response.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"uuid": "83164488-959b-4ddf-a5c8-04cadef435ff"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "yehia2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "usertest@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "user123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 May 2024 15:30:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged in successfully\",\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"Normal user\",\n        \"email\": \"usertest@gmail.com\",\n        \"email_verified_at\": null,\n        \"created_at\": null,\n        \"updated_at\": null\n    },\n    \"token\": \"3|nXzbXqyNAM6FapMyTan1MJWZ79FxO23aV1h6e8oH0c17d5c6\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Admin Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.environment.set (\"token\", response.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"uuid": "a394b9d9-0598-4e3c-b8d5-114f56089d36"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Admin Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 May 2024 14:09:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged in successfully\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Admin user\",\n        \"email\": \"admin@gmail.com\",\n        \"email_verified_at\": null,\n        \"created_at\": null,\n        \"updated_at\": null\n    },\n    \"token\": \"1|ZQcQM0ir3fI4NucmXtqZfxK4TPBWiIhfMBDKI6Sp7119a532\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Tasks",
+					"item": [
+						{
+							"name": "Create a task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"uuid": "10af5e20-ba0d-441b-b9e7-f16412bd32f3"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Dummy task 11",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "due_date",
+											"value": "2024-05-04",
+											"type": "text"
+										},
+										{
+											"key": "parent_task_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/tasks",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create a task",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "Dummy task 7",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content",
+													"type": "text"
+												},
+												{
+													"key": "user_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "due_date",
+													"value": "2024-05-04",
+													"type": "text"
+												},
+												{
+													"key": "parent_task_id",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/api/tasks",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"tasks"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 17:22:36 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Task created successfully\",\n    \"data\": {\n        \"title\": \"Dummy task 7\",\n        \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n        \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n        \"created_at\": \"2024-05-03T17:22:36.000000Z\",\n        \"user_id\": \"Normal user\",\n        \"parent_task_id\": \"1\",\n        \"status\": null,\n        \"sub_tasks\": []\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"uuid": "3ab1152e-ac8b-4306-a2d9-f69eb3c05dcb"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Lorem Ipsum\",\r\n    \"parent_task_id\": \"2\",\r\n    \"user_id\": 4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/tasks/20",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"20"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update task",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"Lorem Ipsum\",\r\n    \"parent_task_id\": \"2\",\r\n    \"user_id\": 4\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/tasks/19",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"tasks",
+												"19"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 17:27:49 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Task updated successfully\",\n    \"data\": {\n        \"id\": 19,\n        \"title\": \"Lorem Ipsum\",\n        \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n        \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n        \"created_at\": \"2024-05-03T17:27:31.000000Z\",\n        \"user_id\": \"Dorian Spinka MD\",\n        \"parent_task_id\": \"Doloremque quaerat vel.\",\n        \"status\": \"pending\",\n        \"sub_tasks\": []\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Retrieve tasks",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"uuid": "e68062fb-a759-4a7c-9269-3bb34e764fce"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/tasks?due_date_from=2024-04-10&due_date_to=2024-04-17",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "due_date_from",
+											"value": "2024-04-10"
+										},
+										{
+											"key": "due_date_to",
+											"value": "2024-04-17"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Retrieve tasks",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/tasks?due_date_from=2024-04-10&due_date_to=2024-04-17",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"tasks"
+											],
+											"query": [
+												{
+													"key": "due_date_from",
+													"value": "2024-04-10"
+												},
+												{
+													"key": "due_date_to",
+													"value": "2024-04-17"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 17:40:46 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tasks retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Lorem Ipsum\",\n            \"description\": \"Dolores rerum expedita aut qui nesciunt consequuntur temporibus quisquam illum saepe modi quia sed odio et ipsum rerum incidunt voluptate ut rerum rerum est sequi ut quis ex eos culpa omnis exercitationem est at aut perferendis consequatur eaque consequuntur et non unde assumenda sit est et exercitationem optio ipsam quaerat ipsum id enim qui dolorem sunt cumque rerum unde nisi magni tempora.\",\n            \"due_date\": \"2024-04-16T22:33:28.000000Z\",\n            \"created_at\": \"2024-05-03T14:09:25.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": null,\n            \"status\": \"completed\",\n            \"sub_tasks\": [\n                {\n                    \"id\": 14,\n                    \"user_id\": 2,\n                    \"parent_task_id\": 1,\n                    \"title\": \"Dummy task 5\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"completed\",\n                    \"created_at\": \"2024-05-03 15:35:08\",\n                    \"updated_at\": \"2024-05-03T16:58:46.000000Z\"\n                },\n                {\n                    \"id\": 15,\n                    \"user_id\": 2,\n                    \"parent_task_id\": 1,\n                    \"title\": \"Dummy task 6\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"pending\",\n                    \"created_at\": \"2024-05-03 17:21:43\",\n                    \"updated_at\": \"2024-05-03T17:21:43.000000Z\"\n                },\n                {\n                    \"id\": 16,\n                    \"user_id\": 2,\n                    \"parent_task_id\": 1,\n                    \"title\": \"Dummy task 7\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"pending\",\n                    \"created_at\": \"2024-05-03 17:22:36\",\n                    \"updated_at\": \"2024-05-03T17:22:36.000000Z\"\n                },\n                {\n                    \"id\": 17,\n                    \"user_id\": 2,\n                    \"parent_task_id\": 1,\n                    \"title\": \"Dummy task 8\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"pending\",\n                    \"created_at\": \"2024-05-03 17:23:24\",\n                    \"updated_at\": \"2024-05-03T17:23:24.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Doloremque quaerat vel.\",\n            \"description\": \"Mollitia et harum dolorem quisquam est voluptatum est et similique consequatur rerum aut doloremque magnam illum dolores minima natus adipisci eum omnis nihil quasi aliquam maiores excepturi aut quia fugit est non assumenda voluptas quia labore.\",\n            \"due_date\": \"2024-04-10T19:45:07.000000Z\",\n            \"created_at\": \"2024-05-03T14:09:25.000000Z\",\n            \"user_id\": \"Ms. Virgie Crooks\",\n            \"parent_task_id\": null,\n            \"status\": \"pending\",\n            \"sub_tasks\": [\n                {\n                    \"id\": 19,\n                    \"user_id\": 4,\n                    \"parent_task_id\": 2,\n                    \"title\": \"Lorem Ipsum\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"pending\",\n                    \"created_at\": \"2024-05-03 17:27:31\",\n                    \"updated_at\": \"2024-05-03T17:27:49.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Et et et eveniet.\",\n            \"description\": \"In consequuntur cumque iure unde sint optio maiores voluptates qui consequatur voluptate illo unde tempora illo sint architecto accusantium eum dignissimos officiis quidem est occaecati necessitatibus magnam et a corrupti reprehenderit deleniti ut sapiente culpa est et mollitia et hic quibusdam quae ut quia maxime velit nemo voluptate voluptas eaque quis incidunt tenetur quae deserunt ut quidem ut dolorum accusamus.\",\n            \"due_date\": \"2024-04-16T06:56:04.000000Z\",\n            \"created_at\": \"2024-05-03T14:09:25.000000Z\",\n            \"user_id\": \"Glenna Paucek DDS\",\n            \"parent_task_id\": null,\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Retrieve a single task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/tasks/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Retrieve a single task",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/tasks/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"tasks",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 17:41:39 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Task retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Lorem Ipsum\",\n        \"description\": \"Dolores rerum expedita aut qui nesciunt consequuntur temporibus quisquam illum saepe modi quia sed odio et ipsum rerum incidunt voluptate ut rerum rerum est sequi ut quis ex eos culpa omnis exercitationem est at aut perferendis consequatur eaque consequuntur et non unde assumenda sit est et exercitationem optio ipsam quaerat ipsum id enim qui dolorem sunt cumque rerum unde nisi magni tempora.\",\n        \"due_date\": \"2024-04-16T22:33:28.000000Z\",\n        \"created_at\": \"2024-05-03T14:09:25.000000Z\",\n        \"user_id\": \"Normal user\",\n        \"parent_task_id\": null,\n        \"status\": \"completed\",\n        \"sub_tasks\": [\n            {\n                \"id\": 14,\n                \"user_id\": 2,\n                \"parent_task_id\": 1,\n                \"title\": \"Dummy task 5\",\n                \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                \"due_date\": \"2024-05-04\",\n                \"status\": \"completed\",\n                \"created_at\": \"2024-05-03 15:35:08\",\n                \"updated_at\": \"2024-05-03T16:58:46.000000Z\"\n            },\n            {\n                \"id\": 15,\n                \"user_id\": 2,\n                \"parent_task_id\": 1,\n                \"title\": \"Dummy task 6\",\n                \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                \"due_date\": \"2024-05-04\",\n                \"status\": \"pending\",\n                \"created_at\": \"2024-05-03 17:21:43\",\n                \"updated_at\": \"2024-05-03T17:21:43.000000Z\"\n            },\n            {\n                \"id\": 16,\n                \"user_id\": 2,\n                \"parent_task_id\": 1,\n                \"title\": \"Dummy task 7\",\n                \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                \"due_date\": \"2024-05-04\",\n                \"status\": \"pending\",\n                \"created_at\": \"2024-05-03 17:22:36\",\n                \"updated_at\": \"2024-05-03T17:22:36.000000Z\"\n            },\n            {\n                \"id\": 17,\n                \"user_id\": 2,\n                \"parent_task_id\": 1,\n                \"title\": \"Dummy task 8\",\n                \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                \"due_date\": \"2024-05-04\",\n                \"status\": \"pending\",\n                \"created_at\": \"2024-05-03 17:23:24\",\n                \"updated_at\": \"2024-05-03T17:23:24.000000Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Tasks",
+					"item": [
+						{
+							"name": "Retrieve tasks",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"uuid": "b03da10e-1e6f-459f-bc48-d3ca08d12d92"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/tasks",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Retrieve tasks",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/api/tasks",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"tasks"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 18:02:22 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tasks retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 19,\n            \"title\": \"Lorem Ipsum\",\n            \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n            \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n            \"created_at\": \"2024-05-03T17:27:31.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": \"Lorem Ipsum\",\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        },\n        {\n            \"id\": 18,\n            \"title\": \"Dummy task 9\",\n            \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n            \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n            \"created_at\": \"2024-05-03T17:26:35.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": null,\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        },\n        {\n            \"id\": 17,\n            \"title\": \"Dummy task 8\",\n            \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n            \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n            \"created_at\": \"2024-05-03T17:23:24.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": \"Lorem Ipsum\",\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        },\n        {\n            \"id\": 16,\n            \"title\": \"Dummy task 7\",\n            \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n            \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n            \"created_at\": \"2024-05-03T17:22:36.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": \"Lorem Ipsum\",\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        },\n        {\n            \"id\": 15,\n            \"title\": \"Dummy task 6\",\n            \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n            \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n            \"created_at\": \"2024-05-03T17:21:43.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": \"Lorem Ipsum\",\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        },\n        {\n            \"id\": 14,\n            \"title\": \"Dummy task 5\",\n            \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n            \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n            \"created_at\": \"2024-05-03T15:35:08.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": \"Lorem Ipsum\",\n            \"status\": \"completed\",\n            \"sub_tasks\": []\n        },\n        {\n            \"id\": 13,\n            \"title\": \"Dummy task 4\",\n            \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n            \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n            \"created_at\": \"2024-05-03T15:34:54.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": null,\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        },\n        {\n            \"id\": 12,\n            \"title\": \"Dummy task 2\",\n            \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n            \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n            \"created_at\": \"2024-05-03T14:09:50.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": null,\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        },\n        {\n            \"id\": 11,\n            \"title\": \"Dummy task 1\",\n            \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n            \"due_date\": \"2024-05-04T00:00:00.000000Z\",\n            \"created_at\": \"2024-05-03T14:09:45.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": null,\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        },\n        {\n            \"id\": 1,\n            \"title\": \"Lorem Ipsum\",\n            \"description\": \"Dolores rerum expedita aut qui nesciunt consequuntur temporibus quisquam illum saepe modi quia sed odio et ipsum rerum incidunt voluptate ut rerum rerum est sequi ut quis ex eos culpa omnis exercitationem est at aut perferendis consequatur eaque consequuntur et non unde assumenda sit est et exercitationem optio ipsam quaerat ipsum id enim qui dolorem sunt cumque rerum unde nisi magni tempora.\",\n            \"due_date\": \"2024-04-16T22:33:28.000000Z\",\n            \"created_at\": \"2024-05-03T14:09:25.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": null,\n            \"status\": \"pending\",\n            \"sub_tasks\": [\n                {\n                    \"id\": 14,\n                    \"user_id\": 2,\n                    \"parent_task_id\": 1,\n                    \"title\": \"Dummy task 5\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"completed\",\n                    \"created_at\": \"2024-05-03 15:35:08\",\n                    \"updated_at\": \"2024-05-03T16:58:46.000000Z\"\n                },\n                {\n                    \"id\": 15,\n                    \"user_id\": 2,\n                    \"parent_task_id\": 1,\n                    \"title\": \"Dummy task 6\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"pending\",\n                    \"created_at\": \"2024-05-03 17:21:43\",\n                    \"updated_at\": \"2024-05-03T17:21:43.000000Z\"\n                },\n                {\n                    \"id\": 16,\n                    \"user_id\": 2,\n                    \"parent_task_id\": 1,\n                    \"title\": \"Dummy task 7\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"pending\",\n                    \"created_at\": \"2024-05-03 17:22:36\",\n                    \"updated_at\": \"2024-05-03T17:22:36.000000Z\"\n                },\n                {\n                    \"id\": 17,\n                    \"user_id\": 2,\n                    \"parent_task_id\": 1,\n                    \"title\": \"Dummy task 8\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"pending\",\n                    \"created_at\": \"2024-05-03 17:23:24\",\n                    \"updated_at\": \"2024-05-03T17:23:24.000000Z\"\n                },\n                {\n                    \"id\": 19,\n                    \"user_id\": 2,\n                    \"parent_task_id\": 1,\n                    \"title\": \"Lorem Ipsum\",\n                    \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                    \"due_date\": \"2024-05-04\",\n                    \"status\": \"pending\",\n                    \"created_at\": \"2024-05-03 17:27:31\",\n                    \"updated_at\": \"2024-05-03T17:27:49.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Placeat voluptates eius facere.\",\n            \"description\": \"Voluptatem dicta eligendi earum non reiciendis unde enim voluptatum ullam commodi omnis blanditiis qui dolor nisi delectus fugiat est beatae corrupti dolor fugiat esse quae impedit quia aut magni minima repellat dolorum.\",\n            \"due_date\": \"2024-04-28T03:32:37.000000Z\",\n            \"created_at\": \"2024-05-03T14:09:25.000000Z\",\n            \"user_id\": \"Normal user\",\n            \"parent_task_id\": null,\n            \"status\": \"pending\",\n            \"sub_tasks\": []\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Retrieve a single task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/tasks/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Retrieve a single task",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/api/tasks/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"tasks",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 18:01:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Task retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Lorem Ipsum\",\n        \"description\": \"Dolores rerum expedita aut qui nesciunt consequuntur temporibus quisquam illum saepe modi quia sed odio et ipsum rerum incidunt voluptate ut rerum rerum est sequi ut quis ex eos culpa omnis exercitationem est at aut perferendis consequatur eaque consequuntur et non unde assumenda sit est et exercitationem optio ipsam quaerat ipsum id enim qui dolorem sunt cumque rerum unde nisi magni tempora.\",\n        \"due_date\": \"2024-04-16T22:33:28.000000Z\",\n        \"created_at\": \"2024-05-03T14:09:25.000000Z\",\n        \"user_id\": \"Normal user\",\n        \"parent_task_id\": null,\n        \"status\": \"pending\",\n        \"sub_tasks\": [\n            {\n                \"id\": 14,\n                \"user_id\": 2,\n                \"parent_task_id\": 1,\n                \"title\": \"Dummy task 5\",\n                \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                \"due_date\": \"2024-05-04\",\n                \"status\": \"completed\",\n                \"created_at\": \"2024-05-03 15:35:08\",\n                \"updated_at\": \"2024-05-03T16:58:46.000000Z\"\n            },\n            {\n                \"id\": 15,\n                \"user_id\": 2,\n                \"parent_task_id\": 1,\n                \"title\": \"Dummy task 6\",\n                \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                \"due_date\": \"2024-05-04\",\n                \"status\": \"pending\",\n                \"created_at\": \"2024-05-03 17:21:43\",\n                \"updated_at\": \"2024-05-03T17:21:43.000000Z\"\n            },\n            {\n                \"id\": 16,\n                \"user_id\": 2,\n                \"parent_task_id\": 1,\n                \"title\": \"Dummy task 7\",\n                \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                \"due_date\": \"2024-05-04\",\n                \"status\": \"pending\",\n                \"created_at\": \"2024-05-03 17:22:36\",\n                \"updated_at\": \"2024-05-03T17:22:36.000000Z\"\n            },\n            {\n                \"id\": 17,\n                \"user_id\": 2,\n                \"parent_task_id\": 1,\n                \"title\": \"Dummy task 8\",\n                \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                \"due_date\": \"2024-05-04\",\n                \"status\": \"pending\",\n                \"created_at\": \"2024-05-03 17:23:24\",\n                \"updated_at\": \"2024-05-03T17:23:24.000000Z\"\n            },\n            {\n                \"id\": 19,\n                \"user_id\": 2,\n                \"parent_task_id\": 1,\n                \"title\": \"Lorem Ipsum\",\n                \"description\": \"Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content\",\n                \"due_date\": \"2024-05-04\",\n                \"status\": \"pending\",\n                \"created_at\": \"2024-05-03 17:27:31\",\n                \"updated_at\": \"2024-05-03T17:27:49.000000Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update task",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"uuid": "334d783b-73c5-4078-8b13-b1353703c597"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"status\": \"completed\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/tasks/19",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"19"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update task",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{ \r\n    \"status\": \"completed\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/api/tasks/1",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"api",
+												"tasks",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.12"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 03 May 2024 16:41:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Task updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 3,\n        \"parent_task_id\": 1,\n        \"title\": \"Lorem Ipsum\",\n        \"description\": \"Dolores rerum expedita aut qui nesciunt consequuntur temporibus quisquam illum saepe modi quia sed odio et ipsum rerum incidunt voluptate ut rerum rerum est sequi ut quis ex eos culpa omnis exercitationem est at aut perferendis consequatur eaque consequuntur et non unde assumenda sit est et exercitationem optio ipsam quaerat ipsum id enim qui dolorem sunt cumque rerum unde nisi magni tempora.\",\n        \"due_date\": \"2024-04-16 22:33:28\",\n        \"status\": \"completed\",\n        \"created_at\": \"2024-05-03T14:09:25.000000Z\",\n        \"updated_at\": \"2024-05-03T16:41:14.000000Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
