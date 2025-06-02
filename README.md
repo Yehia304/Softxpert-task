@@ -2,6 +2,8 @@
 
 Steps to deploy
 
+The project is in "master" branch
+
 1- Clone the project
 2- Composer install
 3- Fix the .env environment variables
